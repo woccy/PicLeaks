@@ -2,15 +2,15 @@
 ## PICLEAKS - the free open source picture site ##
 ##################################################
 
-# Admin:
-# Niko Heikkilä (elcynico)
+## Admin:
+## Niko Heikkilä (elcynico)
 
-# Coders:
+## Coders:
 
-# Arttu Erkkilä
-# Timo Levänen
+## Arttu Erkkilä
+## Timo Levänen
 
-# Instructions for obtaining the latest code:
+## Instructions for obtaining the latest code:
 
 # create your local fork by clicking 'Fork'
 
@@ -29,10 +29,14 @@ git remote add upstream git://github.com/elcynico/PicLeaks.git
 
 git fetch upstream
 
-
 # code something!
+# don't forget to commit your changes
+
+git commit -m "<what have you done?>"
+
 # then push your code to your fork
 
 git push origin master
 
+# If you see a 100% indicator, the push is done, otherwise contact the admin
 # That be it, welcome as a collaborator!
