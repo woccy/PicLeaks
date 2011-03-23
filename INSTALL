@@ -1,0 +1,13 @@
+################################
+## Configuring PicLeaks       ##
+################################
+
+1. go to configuration folder
+2. open application-sample.ini
+3. save it with different file name to temporary location
+4. edit the details where marked
+5. save the file as application.ini into folder /site/application/configs/
+6. launch your browser and visit project's index file (eg. http://localhost/PicLeaks
+7. if you see Welcome -screen, installation was successful!)
+
+
