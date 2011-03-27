@@ -1,5 +1,5 @@
 ﻿##################################################
-## PICLEAKS - the free open source picture site ##
+## PICLEAKS - the free open source picture site              ##
 ##################################################
 
 # Requirements
@@ -17,14 +17,14 @@ XAMPP / WAMP Server environment for developing locally
 
 ## Instructions for obtaining the latest code and developing it
 
-# create your local fork by clicking 'Fork'
+# create your local fork by clicking 'Fork' (located on the upper right corner of this page)
 
-# go to the root folder of your web server for example:
+# go to the root folder of your web server:
 
 cd www
 
-# clone the repo from private URL (remember to have your SSH key(s) added under Account Settings)
-# this point will be called origin (you can rename it later)
+# clone the repo from private URL (remember to have your SSH key(s) added under "Account Settings")
+# this point will be called origin (you can rename it later, if you want)
 
 git clone git@github.com:elcynico/PicLeaks.git
 
@@ -34,15 +34,16 @@ cd PicLeaks
 git remote add upstream git://github.com/elcynico/PicLeaks.git
 
 # fetch the latest upstream content
+# if you haven't developed for awhile, remember to fetch, otherwise it's not necessary
 
 git fetch upstream
 
 # code something!
 # don't forget to commit your changes
 
-cd site
 git commit -am "<your comments?>"
 
-# then push your code to your fork
+# then push the staged area code to your fork
+# git push <remote_name> <branch_name>
 
 git push origin master
