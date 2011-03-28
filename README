@@ -26,12 +26,12 @@ cd www
 # clone the repo from private URL (remember to have your SSH key(s) added under "Account Settings")
 # this point will be called origin (you can rename it later, if you want)
 
-git clone git@github.com:elcynico/PicLeaks.git
+# git clone git@github.com:<user_name>/PicLeaks.git
 
-# create an upstream remote from public URL
+create an upstream remote from public URL
 
 cd PicLeaks
-git remote add upstream git://github.com/elcynico/PicLeaks.git
+git remote add upstream git://github.com/<user_name>/PicLeaks.git
 
 # fetch the latest upstream content
 # if you haven't developed for awhile, remember to fetch, otherwise it's not necessary
