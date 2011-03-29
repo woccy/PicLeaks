@@ -7,6 +7,7 @@ site/application/configs/application.ini
 
 # don't ignore these files
 
+!.htaccess
 !.gitignore
 !.gitmodules
 !.mailmap
