@@ -1,7 +1,8 @@
 <?php
 
 // Define path separator
-define('PATH_SEPARATOR', '/');
+defined('PATH_SEPARATOR')
+    || define('PATH_SEPARATOR', '/');
 
 // Define path to application directory
 defined('APPLICATION_PATH')
