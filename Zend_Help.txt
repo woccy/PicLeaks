@@ -1,0 +1,69 @@
+Zend Framework Command Line Console Tool v1.11.4
+Usage:
+    zf [--global-opts] action-name [--action-opts] provider-name [--provider-opts] [provider parameters ...]
+    Note: You may use "?" in any place of the above usage string to ask for more specific help information.
+    Example: "zf ? version" will list all available actions for the version provider.
+
+Providers and their actions:
+  Version
+    zf show version mode[=mini] name-included[=1]
+    Note: There are specialties, use zf show version.? to get specific help on them.
+
+  Config
+    zf create config
+    zf show config
+    zf enable config
+    Note: There are specialties, use zf enable config.? to get specific help on them.
+    zf disable config
+    Note: There are specialties, use zf disable config.? to get specific help on them.
+
+  Phpinfo
+    zf show phpinfo
+
+  Manifest
+    zf show manifest
+
+  Profile
+    zf show profile
+
+  Project
+    zf create project path name-of-profile file-of-profile
+    zf show project
+    Note: There are specialties, use zf show project.? to get specific help on them.
+
+  Application
+    zf change application.class-name-prefix class-name-prefix
+
+  Model
+    zf create model name module
+
+  View
+    zf create view controller-name action-name-or-simple-name
+
+  Controller
+    zf create controller name index-action-included[=1] module
+
+  Action
+    zf create action name controller-name[=Index] view-included[=1] module
+
+  Module
+    zf create module name
+
+  Form
+    zf enable form module
+    zf create form name module
+
+  Layout
+    zf enable layout
+    zf disable layout
+
+  DbAdapter
+    zf configure db-adapter dsn section-name[=production]
+
+  DbTable
+    zf create db-table name actual-table-name module force-overwrite
+    Note: There are specialties, use zf create db-table.? to get specific help on them.
+
+  ProjectProvider
+    zf create project-provider name actions
+	
