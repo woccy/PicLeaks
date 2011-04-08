@@ -15,6 +15,8 @@ resources.db.params.username = "root"
 resources.db.params.password = ""
 resources.db.params.dbname = "picleaks"
 
+phpsettings.error_reporting = E_ALL
+
 resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts/"
 resources.view.doctype = "XHTML1_STRICT"
 
@@ -25,7 +27,6 @@ phpSettings.display_startup_errors = 1
 phpSettings.display_errors = 1
 
 [development : production]
-phpsettings.error_reporting = E_ALL
 phpSettings.display_startup_errors = 1
 phpSettings.display_errors = 1
 resources.frontController.params.displayExceptions = 1

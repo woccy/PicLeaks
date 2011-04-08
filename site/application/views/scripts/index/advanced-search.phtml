@@ -1,0 +1,11 @@
+<?php echo $this->form; ?>
+
+<?php 
+if($this->searchQuery)
+{
+    foreach($this->searchQuery as $searchQuery) :
+    echo $this->escape($searchQuery->title);
+    endforeach; 
+}
+
+?>

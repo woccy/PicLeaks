@@ -187,14 +187,17 @@ FileETag None
 Options -MultiViews 
 
 <IfModule mod_rewrite.c>
-	RewriteEngine On
-	RewriteBase /
-	RewriteCond %{REQUEST_FILENAME} -s [OR]
-	RewriteCond %{REQUEST_FILENAME} -l [OR]
-	RewriteCond %{REQUEST_FILENAME} -d
-	RewriteRule ^.*$ - [NC,L]
-	RewriteRule ^.*$ index.php [NC,L]
-	
+    # Rewrite rules for Zend Framework
+    RewriteEngine on
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !^/wiki
+    RewriteCond %{REQUEST_URI} !^/phpdoc
+    RewriteCond %{REQUEST_URI} !^/forum
+    RewriteCond %{REQUEST_URI} !^/dav
+
+    RewriteRule .* index.php
+
 	# Block access to "hidden" directories whose names begin with a period. This
 	# includes directories used by version control systems such as Subversion or Git.
 	RewriteRule "(^|/)\." - [F]

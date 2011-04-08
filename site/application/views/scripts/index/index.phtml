@@ -1,58 +1,12 @@
-<style>
-    a:link,
-    a:visited
-    {
-        color: #4c9015;
-    }
+<?php echo $this->form; ?>
 
-    span#zf-name
-    {
-        color: #1d3708;
-    }
-
-    div#welcome
-    {
-        color: #EEE;
-        background-image: url(http://framework.zend.com/images/bkg_header.jpg);
-        width:  960px;
-        height: 720px;
-        margin: 100px auto 0 auto;
-        border: 4px solid #448113;
-        overflow: hidden;
-        text-align: center;
-    }
-    
-    div#main ul
-    {
-        list-style: none;
-        color: #222;
-    }
-
-    div#more-information
-    {
-        background-image: url(http://framework.zend.com/images/bkg_body-bottom.gif);
-        border-top: 4px solid #448113;
-        height: 100%;
-    }
-</style>
-<div id="welcome">
-    <h1>Tervetuloa sivustolle <span id="zf-name">PicLeaks!</span></h1>
-    
-    <h3>Tälle sivulle avataan uusi hieno kuvasivusto lähitulevaisuudessa.</h3>
-    <div id="main">
-    <p>Tekijät:</p>
-    <ul>
-        <li>Niko Heikkilä</li>
-        <li>Arttu Erkkilä</li>
-        <li>Timo Levänen</li>
-    </ul>
-    </div>
-    <div id="more-information">
-        <p><img src="http://framework.zend.com/images/PoweredBy_ZF_4LightBG.png" /></p>
-        <p>
-            Sivusto toteutettu Zend Frameworkilla: <br />
-            <a href="http://framework.zend.com/">Zend Framework Website</a> |
-            <a href="http://framework.zend.com/manual/en/">Zend Framework Manual</a>
-        </p>
-    </div>
+<?php foreach($this->pictures as $pictures) : ?>
+<div class="imagebox">
+        <div class="pic"><a href="<?php echo $this->url(array('controller'=>'index','action'=>'viewpicture', 'id'=>$this->escape($pictures->picture_id)));?>"><img alt=""  src="../pictures/thumbs/<?php echo $this->escape($pictures->filename);?>" /></a> </div>
+        <!--- turha ? <div class="uploadtime" style="padding: 0px 0px 10px 20px;"><?php echo date('d.m.Y H:i:s', strtotime($this->escape($pictures->uploadtime))); ?></div>--->
 </div>
+<?php endforeach; ?>
+
+<div class="clear"></div>
+<br /><br />
+<div id="paging" style="text-align: center; margin: 0px;">Previous - Next</div>

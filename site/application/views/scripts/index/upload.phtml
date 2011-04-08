@@ -1,0 +1,15 @@
+<?php
+$this->title = "Upload";
+$this->headTitle($this->title);
+
+$auth = Zend_Auth::getInstance();
+        if ($auth->hasIdentity()) {
+            echo $this->form->setAction($this->url());
+        }
+        else
+        {
+            echo "You must log in first!";
+        }
+
+
+?>

@@ -2,8 +2,9 @@
 
 .*
 *.log
-site/data/
-site/application/configs/application.ini
+site/www/pictures
+site/www/temp
+site/www/upload
 
 # don't ignore these files
 

@@ -1,0 +1,26 @@
+<?php foreach($this->picture as $picture) : ?>
+<div style="border: 1px solid #ACAFAF; text-align: center; background-image: url('http://localhost/picleaks/public/css/box.png'); padding: 20px; width: 620px; margin: auto;"> 
+    <a href="<?php echo $this->url(array('controller'=>'index','action'=>'index'), null, true); ?> ">
+        <img alt=""  src="../../.<?php echo $this->escape($picture->path) . $this->escape($picture->filename);?>" />
+    </a>
+ </div>
+
+
+<?php endforeach; ?>
+
+<?php 
+$auth = Zend_Auth::getInstance();
+        if ($auth->hasIdentity()) {
+            echo $this->comment_form; 
+        }
+        else
+        {
+            echo "<br />Only registered users can write commments<br /><br />";
+        }
+?>
+
+
+<?php foreach($this->listComments as $listComments) : ?>
+    <?php echo date('d.m.Y H:i', strtotime($this->escape($listComments->comment_created))) . ' &lt;' . $this->escape($listComments->username) . '&gt; ' . $this->escape($listComments->comment); ?> <br />
+<?php endforeach; ?>
+

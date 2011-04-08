@@ -226,7 +226,7 @@ class IndexController extends Zend_Controller_Action
     public function faqAction()
     {
         // UKK voisi olla yksinkertaisimmillaan taulukko kysymys/vastaus -pareista ?
-        $this->view->answers = array("Was ist das?" => "I don't know!");
+        $this->view->answers = array();
     }
 
     public function advancedSearchAction()

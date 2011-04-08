@@ -1,0 +1,59 @@
+<?php
+
+$this->headMeta()->appendHttpEquiv('Contentype', 'text/html;charset=utf-8');
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle(' PicLeaks ');
+
+echo $this->doctype();
+
+
+$indexLink = $this->url(array('controller' => 'index', 'action' => 'index'), null, true);
+$RegisterLink = $this->url(array('controller' => 'index', 'action' => 'register'), null, true);
+$UploadLink = $this->url(array('controller' => 'index', 'action' => 'upload'), null, true);
+$AdvancedSearchLink = $this->url(array('controller' => 'index', 'action' => 'advanced-search'), null, true);
+$FaqLink = $this->url(array('controller' => 'index', 'action' => 'faq'), null, true);
+
+?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
+<head>
+    <?php echo $this->headMeta(); ?>
+    <?php echo $this->headTitle(); ?>
+	<?php echo $this->headLink()->prependStylesheet($this->baseUrl() . '/public/css/site.css'); ?>
+
+</head>
+<body>
+    <div id="searchBox"><?php echo $this->searchBox(); ?></div>
+    <div class='clear'>&nbsp;</div> 
+    <div id="logged-in-as"><?php echo $this->loggedInAs(); ?></div>
+    <div id="container">        
+<div id="header"><b style="color:pink; font-size: 50px; text-shadow: 2px 2px 2px #B2878F;">Pic</b><b style="color:greenyellow; font-size: 50px; text-shadow: 2px 2px 2px #7BB221;
+">Leaks</b>
+
+    
+
+</div>
+
+<div id="menu">
+    <a href="<?php echo $indexLink ?>">Main</a>
+    <a href="<?php echo $RegisterLink ?>">Register</a>
+    <a href="<?php echo $UploadLink ?>">Upload</a>
+    <a href="<?php echo $AdvancedSearchLink ?>">Advanced Search</a>
+    <a href="<?php echo $FaqLink ?>">FAQ</a>
+</div>
+
+<div id="content">
+    <h1><?php echo $this->escape($this->title); ?></h1>
+    <?php echo $this->layout()->content; ?>
+
+</div>
+
+    <div class='clear'>&nbsp;</div> 
+    
+    <div id="footer"> Pictures in database: 446953 | 277 users online | picleaks @ gmail dot com</div>
+    </div>
+
+    
+
+</body>
+</html>
