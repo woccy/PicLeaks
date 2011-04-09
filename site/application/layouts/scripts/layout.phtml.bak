@@ -1,11 +1,13 @@
 <?php
 
-$this->headMeta()->appendHttpEquiv('Contentype', 'text/html;charset=utf-8');
-$this->headTitle()->setSeparator(' - ');
-$this->headTitle(' PicLeaks ');
+$this->headMeta()->appendHttpEquiv('X-UA-Compatible', 'IE=edge,chrome=1');
+$this->headMeta()->appendName('description', 'PicLeaks - the open source picture site');
+$this->headMeta()->appendName('author', 'Heikkilä, Erkkilä, Levänen');
+$this->headMeta()->appendName('keywords', 'images,humor,nsfw,comics');
+$this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0');
 
-echo $this->doctype();
-
+$this->headTitle()->setSeparator(' :: ');
+$this->headTitle('PicLeaks');
 
 $indexLink = $this->url(array('controller' => 'index', 'action' => 'index'), null, true);
 $RegisterLink = $this->url(array('controller' => 'index', 'action' => 'register'), null, true);
@@ -13,47 +15,61 @@ $UploadLink = $this->url(array('controller' => 'index', 'action' => 'upload'), n
 $AdvancedSearchLink = $this->url(array('controller' => 'index', 'action' => 'advanced-search'), null, true);
 $FaqLink = $this->url(array('controller' => 'index', 'action' => 'faq'), null, true);
 
-?>
+if ($this->doctype()->isHtml5()) echo $this->doctype();
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
+?>
+<html>
 <head>
     <?php echo $this->headMeta(); ?>
     <?php echo $this->headTitle(); ?>
-	<?php echo $this->headLink()->prependStylesheet($this->baseUrl() . '/public/css/site.css'); ?>
-
-</head>
-<body>
-    <div id="searchBox"><?php echo $this->searchBox(); ?></div>
-    <div class='clear'>&nbsp;</div> 
-    <div id="logged-in-as"><?php echo $this->loggedInAs(); ?></div>
-    <div id="container">        
-<div id="header"><b style="color:pink; font-size: 50px; text-shadow: 2px 2px 2px #B2878F;">Pic</b><b style="color:greenyellow; font-size: 50px; text-shadow: 2px 2px 2px #7BB221;
-">Leaks</b>
-
     
-
+	<?php $this->headLink()->prependStylesheet($this->baseUrl() . '/css/site.css'); ?>
+    <?php //$this->headLink()->appendStylesheet($this->baseUrl() . '/css/handheld.css'); ?>
+    
+    <?php echo $this->headLink(); ?>
+    <?php $this->headScript()->prependFile($this->baseUrl() . '/js/libs/modernizr-1.7.min.js'); ?>
+</head>
+<body class="png_bg">
+<div id="searchBox"><?php echo $this->searchBox(); ?></div>
+<div class='clear'>&nbsp;</div> 
+<div id="logged-in-as"><?php echo $this->loggedInAs(); ?></div>
+<div id="container" class="png_bg">
+      
+<div id="header">
+    <a href="<?php echo $indexLink; ?>"><b style="color:pink; font-size: 50px; text-shadow: 2px 2px 2px #B2878F;">Pic</b><b style="color:greenyellow; font-size: 50px; text-shadow: 2px 2px 2px #7BB221;
+    ">Leaks</b></a>
 </div>
 
 <div id="menu">
-    <a href="<?php echo $indexLink ?>">Main</a>
     <a href="<?php echo $RegisterLink ?>">Register</a>
     <a href="<?php echo $UploadLink ?>">Upload</a>
     <a href="<?php echo $AdvancedSearchLink ?>">Advanced Search</a>
     <a href="<?php echo $FaqLink ?>">FAQ</a>
 </div>
 
-<div id="content">
+<div id="content" role="main">
     <h1><?php echo $this->escape($this->title); ?></h1>
     <?php echo $this->layout()->content; ?>
-
 </div>
 
     <div class='clear'>&nbsp;</div> 
     
     <div id="footer"> Pictures in database: 446953 | 277 users online | picleaks @ gmail dot com</div>
+        <!-- jQuery test -->
+        <div id="test" style="width='100%'; height='60px'; display:none;">
+            <h2>jQuery is loaded!</h2>
+            <p>...you can now safely remove this element.</p>
+        </div>
     </div>
 
+  <!--[if lt IE 7 ]>
+    <?php $this->headScript()->appendFile($this->baseUrl() . '/js/libs/dd_belatedpng.js'); ?>
+    <script>DD_belatedPNG.fix("img, .png_bg");</script>
+  <![endif]-->
     
-
+<?php $this->headScript()->appendFile($this->baseUrl() . '/js/libs/jquery-1.5.1.min.js'); ?>
+<?php $this->headScript()->appendFile($this->baseUrl() . '/js/plugins.js'); ?>
+<?php $this->headScript()->appendFile($this->baseUrl() . '/js/script.js'); ?>
+<?php echo $this->headScript(); ?>
 </body>
 </html>

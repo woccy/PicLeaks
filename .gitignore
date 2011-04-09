@@ -2,6 +2,7 @@
 
 .*
 *.log
+*.bak
 site/www/pictures
 site/www/temp
 site/www/upload
