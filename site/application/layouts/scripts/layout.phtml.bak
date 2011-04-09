@@ -18,7 +18,7 @@ $FaqLink = $this->url(array('controller' => 'index', 'action' => 'faq'), null, t
 if ($this->doctype()->isHtml5()) echo $this->doctype();
 
 ?>
-<html>
+<html class="no-js">
 <head>
     <?php echo $this->headMeta(); ?>
     <?php echo $this->headTitle(); ?>
@@ -56,7 +56,7 @@ if ($this->doctype()->isHtml5()) echo $this->doctype();
     
     <div id="footer"> Pictures in database: 446953 | 277 users online | picleaks @ gmail dot com</div>
         <!-- jQuery test -->
-        <div id="test" style="width='100%'; height='60px'; display:none;">
+        <div id="test" style="width='100%'; height='60px'; padding: 10px; display:none;">
             <h2>jQuery is loaded!</h2>
             <p>...you can now safely remove this element.</p>
         </div>
