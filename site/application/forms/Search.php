@@ -5,25 +5,21 @@ class Application_Form_Search extends Zend_Form
 
     public function init()
     {
-        /* Form Elements & Other Definitions Here ... */
-        $this->setAction('http://localhost/picleaks/public/index/advanced-search/')
-         ->setMethod('post');
+        $this->setName('search');
+        $this->setAction('/index/advanced-search')->setMethod('post');
 
         $search = new Zend_Form_Element_Text('search');
         $search->setRequired(true)
-                ->setValue('search')
-                ->addFilter('StripTags')
-		->addFilter('StringTrim')
-		->addValidator('NotEmpty');
+               ->addFilter('StripTags')
+               ->addFilter('StringTrim')
+               ->addValidator('NotEmpty')
+               ->setValue('Search for...');
 
         $submit = new Zend_Form_Element_Submit('submit');
-        $submit->setLabel('Submit');
-        // attach elements to form
+        $submit->setLabel('Search');
 
-        $this->addElement($search)
-             ->addElement($submit);
+        $this->addElement($search);
+             //->addElement($submit);
     }
-
-
 }
 

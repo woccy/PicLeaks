@@ -74,6 +74,18 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 a, a:active, a:visited { color: #607890; }
 a:hover { color: #036; }
 
+/**
+ *
+ * CSS3 styles here
+ *
+ */
+ 
+@font-face
+{
+    font-family: 'Ubuntu';
+    src: url('http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold');
+}
+
 
 /**
  * Primary styles
@@ -82,46 +94,52 @@ a:hover { color: #036; }
  */
 
 
-body,html {
-    font-family: georgia;
-    margin: 0;
+body,html
+{
+    font-family: Ubuntu, Helvetica, sans-serif;
+    font-size: 13pt;
     background-color: #C0C0C0;
 }
 
 
 #container
 {
-
-       margin: auto;
-      width: 960px;
-      height: 100%;
-      background-color: #EDEDED;
-
-
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    height: 100%;
+    background-color: #EDEDED;
 }
 
-#header  {
-      text-align: left;
-      padding-top: 10px;
-      padding-left: 10px;
-      height: 65px;
-      background-color: #4479A4;
+#header
+{
+    padding-top: 5px;
+    padding-left: 5px;
+    height: 180px;
+    background-color: #4479A4;
 }
 
-#menu{
-      margin: 0px;
-      text-align: left;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 20px;    
-      color: white;
-      background-color: #283844;
-      -webkit-box-shadow: 0px 5px 5px #888888; /* Safari */
-        box-shadow: 0px 5px 5px #888888;
+#header a
+{
+    text-decoration: none;
+    color: #000;
+}
+
+#header_left { float: left; margin: 15px 0 auto 20px; font-weight: bold; }
+#header_right { float: right; margin: 15px 20px auto 0; font-weight: bold; }
+
+#menu
+{
+    margin: 0px;
+    padding: 10px 10px;
+    color: #888;
+    background-color: #283844;
+    -webkit-box-shadow: 0px 5px 5px #888888; /* Safari */
+    box-shadow: 0px 5px 5px #888888;
 }
 
 #menu a {
-      padding-left: 50px;
+      margin-left: 20px;
       font-weight: bold;
       font-family: arial;
       text-transform:uppercase;
@@ -131,36 +149,51 @@ body,html {
 }
 
 #menu a:hover {
-      text-decoration: underline;
+      text-decoration: none;
       color: white;
       background-color: #283844;
 }
 
-#logged-in-as {
+#searchBox
+{
     float: left;
-    
+    margin: 80px auto;
 }
 
-#searchBox {
-    float: left;
-
+#loginBox
+{
+    float: right;
 }
+
+/** Otsikon Lomakkeet **/
+
+#header .zend_form
+{
+    font-size: 0.8em;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+}
+
+#header .zend_form dt
+{
+    padding: 5px 0;
+    text-align: right;
+}
+
 
 
 #content
 {
-    
     background-color: #EDEDED;
-    margin: 0px;
-    padding-bottom:60px;
-    padding-left: 70px;
+    padding: auto 50px auto 50px;
+    min-height: 350px;
 }
 
 
 
 .clear
 {
-    margin: 0px;
     clear: both;
 }
 
@@ -178,25 +211,25 @@ body,html {
 }
 
 
-.pic {    
-        padding: 20px;
+.pic
+{    
+    padding: 20px;
 	width: 180px;
 	height: 180px;
 	overflow: hidden;
-        display: block;
+    display: block;
 }
 
 #footer
 {
-   width:100%;
-   height:60px;
-  
-    font-family: georgia;
-    color: white;
+    width:100%;
+    height:60px;  
+    font-family: Ubuntu, Helvetica, sans-serif;
+    color: #FFF;
     padding: 5px 0px 0px 0px;
-    font-size: small;
+    font-size: 0.8em;
     text-align: center;
-    border-top: 2px solid white;
+    border-top: 2px solid #FFF;
     background-color: #4E82AF;
 }
 

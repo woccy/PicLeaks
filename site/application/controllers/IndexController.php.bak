@@ -10,7 +10,21 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-		$form = new Application_Form_Login();
+
+        $picturesTable = new Application_Model_DbTable_Pictures();
+        $select = $picturesTable->select()
+                                ->where('private = ?', 0)
+                                ->order('uploadtime DESC');
+                    
+        $pictures = $picturesTable->fetchAll($select);
+
+        $this->view->pictures = $pictures;
+		
+    }
+    
+    public function loginAction()
+    {
+        $form = new Application_Form_Login();
         $request = $this->getRequest();
         
         if ($request->isPost())
@@ -24,16 +38,6 @@ class IndexController extends Zend_Controller_Action
                 }
             }
         }
-
-        $picturesTable = new Application_Model_DbTable_Pictures();
-        $select = $picturesTable->select()
-                                ->where('private = ?', 0)
-                                ->order('uploadtime DESC');
-                    
-        $pictures = $picturesTable->fetchAll($select);
-
-        $this->view->pictures = $pictures;
-		
     }
 
     protected function _process($values)
@@ -226,7 +230,7 @@ class IndexController extends Zend_Controller_Action
     public function faqAction()
     {
         // UKK voisi olla yksinkertaisimmillaan taulukko kysymys/vastaus -pareista ?
-        $this->view->answers = array();
+        $this->view->answers = array("Was ist das?" => "I don't know!");
     }
 
     public function advancedSearchAction()
