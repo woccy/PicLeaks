@@ -237,39 +237,19 @@ body
       color: green;
 }
 
-#searchBox
-{
-    float: left;
-    margin: 80px auto;
-}
 
-#loginBox
-{
-    float: right;
-}
+/**     Otsikon Lomakkeet   **/
 
-/** Otsikon Lomakkeet **/
-
-#header input
+#header_right input
 {
     font-size: 0.8em;
     padding: 3px;
-}
-
-#header .zend_form
-{
-    font-size: 0.9em;
-    padding: 0;
-    margin: 0;
-}
-
-#header .zend_form dt
-{
-    padding: 2px 0;
-    text-align: right;
+    margin: 8px;
+    display: block;
 }
 
 
+/**     Sisältö             **/
 
 #content
 {

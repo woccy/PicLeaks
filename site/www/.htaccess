@@ -190,9 +190,9 @@ Options -MultiViews
     # Rewrite rules for Zend Framework
     RewriteEngine on
 
-    # Remove index.php from BaseUrl
+    # Remove index.php from BaseUrl if necessary
     RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*index.php
-    RewriteRule ^index.php(.*)$ /picleaks/site/www$1 [NC,L]
+    RewriteRule ^index.php(.*)$ /index$1 [R=301,L]
     
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_URI} !^/pictures

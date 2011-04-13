@@ -70,12 +70,11 @@ if ($this->doctype()->isHtml5()) echo $this->doctype();
 </div>
 
   <!--[if lt IE 7 ]>
-    <?php $this->headScript()->appendFile($this->baseUrl() . '/js/libs/dd_belatedpng.js'); ?>
     <script>DD_belatedPNG.fix("img, .png_bg");</script>
   <![endif]-->
     
-<?php $this->headScript()->appendFile($this->baseUrl() . '/js/libs/jquery-1.5.1.min.js'); ?>
-<?php $this->headScript()->appendFile($this->baseUrl() . '/js/plugins.js'); ?>
+<?php $this->headScript()->appendFile('https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'); ?>
+<?php //$this->headScript()->appendFile($this->baseUrl() . '/js/plugins.js'); ?>
 <?php $this->headScript()->appendFile($this->baseUrl() . '/js/script.js'); ?>
 <?php echo $this->headScript(); ?>
 </body>

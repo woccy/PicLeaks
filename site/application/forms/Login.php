@@ -2,34 +2,58 @@
 
 class Application_Form_Login extends Zend_Form
 {
-    public function init()
+    public function __construct($options = NULL)
     {
-        $this->setName("login");
-        $this->setMethod('post');
-             
-        $this->addElement('text', 'username', array(
-            'filters'    => array('StringTrim', 'StringToLower'),
-            'validators' => array(
-                            array('StringLength', false, array(0, 50)),
-                        ),
-            'required'   => true,
-            'label'      => 'Username'
-        ));
+    
+        parent::__construct();
+        
+        Zend_Dojo::enableForm($this);
+        
+        $this->setName('login')
+             ->setMethod('post');
+        
+        $username = new Zend_Form_Element_Text('username');
+        $username->setLabel('Username')
+                 ->addFilter('StringTrim')
+                 ->addFilter('StringToLower')
+                 ->addValidator('NotEmpty', TRUE)
+                 ->setRequired(TRUE);
 
-        $this->addElement('password', 'password', array(
-            'filters'    => array('StringTrim'),
-            'validators' => array(
-                            array('StringLength', false, array(0, 50)),
-                        ),
-            'required'   => true,
-            'label'      => 'Password'
-        ));
+        $password = new Zend_Form_Element_Password('password');
+        $password->setLabel('Password')
+                 ->addFilter('StringTrim')
+                 ->addValidator('NotEmpty', TRUE)
+                 ->setRequired(TRUE);
+        
 
-        $this->addElement('submit', 'login', array(
-            'required' => false,
-            'ignore'   => true,
-            'label'    => 'Let me in!',
-        ));        
+        $submit = new Zend_Form_Element_Submit('submit');
+        $submit->setLabel('Sign in')
+               ->setIgnore(TRUE)
+               ->setRequired(TRUE);
+
+        
+        $this->addElements(array($username, $password, $submit));
+        
+        /** Lomakkeen ulkoasu */
+        
+        $this->addDecorator('FormElements')
+             ->addDecorator('Fieldset')
+             ->addDecorator('HtmlTag', array('tag' => '<tr>'))
+             ->addDecorator('Form');
+        
+        $this->setElementDecorators(array(
+            array('ViewHelper'),
+            array('Errors'),
+            array('Description'),
+            array('HtmlTag', array('tag' => 'td', 'class' => 'element-group')),
+            ));
+        
+        $submit->setDecorators(array(
+            array('ViewHelper'),
+            array('Description'),
+            array('HtmlTag', array('tag' => 'td', 'class' => 'submit-group')),
+            ));
+        
     }
 }
 
