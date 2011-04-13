@@ -190,17 +190,20 @@ Options -MultiViews
     # Rewrite rules for Zend Framework
     RewriteEngine on
 
+    # Remove index.php from BaseUrl
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*index.php
+    RewriteRule ^index.php(.*)$ /picleaks/site/www$1 [NC,L]
+    
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_URI} !^/wiki
-    RewriteCond %{REQUEST_URI} !^/phpdoc
-    RewriteCond %{REQUEST_URI} !^/forum
-    RewriteCond %{REQUEST_URI} !^/dav
-
-    RewriteRule .* index.php
+    RewriteCond %{REQUEST_URI} !^/pictures
+    RewriteCond %{REQUEST_URI} !^/temp
+    RewriteCond %{REQUEST_URI} !^/upload
+    RewriteRule (.*) index.php [NC,L]
 
 	# Block access to "hidden" directories whose names begin with a period. This
 	# includes directories used by version control systems such as Subversion or Git.
 	RewriteRule "(^|/)\." - [F]
+    
 </IfModule>
 
 SetEnv APPLICATION_ENV development

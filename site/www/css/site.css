@@ -71,15 +71,92 @@ button {  width: auto; overflow: visible; }
 
 body, select, input, textarea { color: #444; }
 h1, h2, h3, h4, h5, h6 { font-weight: bold; }
-a, a:active, a:visited { color: #607890; }
-a:hover { color: #036; }
+a, a:active, a:visited { color: #24f118; }
+a:hover { color: #8ef888; }
 
 /**
  *
  * CSS3 styles here
  *
  */
- 
+
+.box_round
+{
+     -moz-border-radius: 10px; /* FF1+ */
+  -webkit-border-radius: 10px; /* Saf3-4, iOS 1+, Android 1.5+ */
+          border-radius: 10px; /* Opera 10.5, IE9, Saf5, Chrome, FF4 */
+          
+  /* useful if you don't want a bg color from leaking outside the border: */        
+  /*-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; */
+  
+}
+
+.box_shadow
+{
+     -moz-box-shadow: 0px 10px 40px #7E7E7E; /* FF3.5+ */
+  -webkit-box-shadow: 0px 10px 40px #7E7E7E; /* Saf3.0+, Chrome */
+          box-shadow: 0px 10px 40px #7E7E7E; /* Opera 10.5, IE9, Chrome 10+ */
+}
+
+.box_gradient
+{
+  background-color: #4479A4;
+  background-position: fixed;
+  background-image: -moz-linear-gradient(top, #4479A4, #256085); /* FF3.6 */
+  background-image: -ms-linear-gradient(top, #4479A4, #256085); /* IE10 */
+  background-image: -o-linear-gradient(top, #4479A4, #256085); /* Opera 11.10+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4479A4), to(#256085)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #4479A4, #256085); /* Chrome 10+, Saf5.1+ */
+  background-image: linear-gradient(top, #4479A4, #256085);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#4479A4', EndColorStr='#256085'); /* IE6–IE9 */
+}
+
+
+.box_rgba
+{
+  background-color: transparent;
+  background-color: rgba(180, 180, 144, 0.6);  /* FF3+, Saf3+, Opera 10.10+, Chrome, IE9 */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99B4B490,endColorstr=#99B4B490);
+            zoom: 1;
+}
+
+
+.box_rotate
+{
+     -moz-transform: rotate(-7.5deg);  /* FF3.5+ */
+       -o-transform: rotate(-7.5deg);  /* Opera 10.5 */ 
+  -webkit-transform: rotate(-7.5deg);  /* Saf3.1+, Chrome */
+      -ms-transform: rotate(-7.5deg);  /* IE9 */
+          transform: rotate(-7.5deg);  
+             filter: progid:DXImageTransform.Microsoft.Matrix( /* IE6–IE9 */
+                     M11=0.9914448613738104, M12=-0.13052619222005157,M21=0.13052619222005157, M22=0.9914448613738104, sizingMethod='auto expand');
+               zoom: 1.5;
+}
+
+
+.box_transition
+{
+     -moz-transition: all 0.3s ease-out;  /* FF4+ */
+       -o-transition: all 0.3s ease-out;  /* Opera 10.5+ */
+  -webkit-transition: all 0.3s ease-out;  /* Saf3.2+, Chrome */
+      -ms-transition: all 0.3s ease-out;  /* IE10? */
+          transition: all 0.3s ease-out;  
+}
+
+
+.box_textshadow
+{
+     text-shadow: 1px 1px 3px #888; /* FF3.5+, Opera 9+, Saf1+, Chrome */
+}
+
+.box_bgsize
+{
+     -moz-background-size: 100% 100%; /* FF3.6 */
+  -webkit-background-size: 100% 100%; /* Saf3-4 */
+          background-size: 100% 100%; /* Opera, IE9, Saf5, Chrome, FF4 */
+}
+
+
 @font-face
 {
     font-family: 'Ubuntu';
@@ -90,15 +167,15 @@ a:hover { color: #036; }
 /**
  * Primary styles
  *
- * Author: Arttu Erkkilä
+ * Author: Arttu Erkkilä, Niko Heikkilä, Timo Levänen
  */
 
 
-body,html
+body
 {
     font-family: Ubuntu, Helvetica, sans-serif;
     font-size: 13pt;
-    background-color: #C0C0C0;
+    background-color: #4479A4;
 }
 
 
@@ -106,17 +183,19 @@ body,html
 {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
+    border: solid 5px #2C2C2C;
     width: 960px;
-    height: 100%;
     background-color: #EDEDED;
 }
 
 #header
 {
+    opacity: 0.9;
     padding-top: 5px;
     padding-left: 5px;
-    height: 180px;
-    background-color: #4479A4;
+    height: 250px;
+    background-color: #256085;
 }
 
 #header a
@@ -125,17 +204,23 @@ body,html
     color: #000;
 }
 
-#header_left { float: left; margin: 15px 0 auto 20px; font-weight: bold; }
-#header_right { float: right; margin: 15px 20px auto 0; font-weight: bold; }
+.description
+{
+    font-size: 1.2em;
+    font-style: italic;
+    color: #24f118;
+}
+
+#header_left { float: left; margin: 35px auto auto 25px; font-weight: bold; }
+#header_right { float: right; margin: 15px 30px 0 0; font-weight: bold; }
 
 #menu
 {
+    opacity: 0.9;
     margin: 0px;
     padding: 10px 10px;
     color: #888;
-    background-color: #283844;
-    -webkit-box-shadow: 0px 5px 5px #888888; /* Safari */
-    box-shadow: 0px 5px 5px #888888;
+    background-color: #222;
 }
 
 #menu a {
@@ -144,14 +229,12 @@ body,html
       font-family: arial;
       text-transform:uppercase;
       text-decoration: none;
-      color: white;
-      background-color: #283844;
+      color: #AAA;
 }
 
 #menu a:hover {
       text-decoration: none;
-      color: white;
-      background-color: #283844;
+      color: green;
 }
 
 #searchBox
@@ -167,17 +250,22 @@ body,html
 
 /** Otsikon Lomakkeet **/
 
-#header .zend_form
+#header input
 {
     font-size: 0.8em;
-    height: 60px;
+    padding: 3px;
+}
+
+#header .zend_form
+{
+    font-size: 0.9em;
     padding: 0;
     margin: 0;
 }
 
 #header .zend_form dt
 {
-    padding: 5px 0;
+    padding: 2px 0;
     text-align: right;
 }
 
@@ -187,7 +275,6 @@ body,html
 {
     background-color: #EDEDED;
     padding: auto 50px auto 50px;
-    min-height: 350px;
 }
 
 
@@ -222,15 +309,15 @@ body,html
 
 #footer
 {
-    width:100%;
-    height:60px;  
+    height:50px;  
     font-family: Ubuntu, Helvetica, sans-serif;
-    color: #FFF;
-    padding: 5px 0px 0px 0px;
-    font-size: 0.8em;
+    color: #AAA;
+    padding: 25px 10px 5px 10px;
+    font-size: 0.9em;
     text-align: center;
-    border-top: 2px solid #FFF;
-    background-color: #4E82AF;
+    border-top: 2px solid #1C1C1C;
+    border-bottom: 2px solid #1C1C1C;
+    background-color: #256085;
 }
 
 
