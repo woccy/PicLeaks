@@ -18,9 +18,7 @@ class Zend_View_Helper_LoggedInAs extends Zend_View_Helper_Abstract
             $form->setAction('index/index')
                  ->setMethod('post');
                  
-            return $this->view->form = $form;
+            return $this->view->loginForm = $form;
         }
     }
 }
-
-?>

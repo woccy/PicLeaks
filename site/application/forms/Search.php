@@ -9,10 +9,6 @@ class Application_Form_Search extends Zend_Form
         
         Zend_Dojo::enableForm($this);
         
-        $this->setName('search')
-             ->setAction('/index/advanced-search')
-             ->setMethod('post');
-
         $search = new Zend_Form_Element_Text('search');
         $search->setRequired(true)
                ->setValue('Search...')
