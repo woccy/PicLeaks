@@ -289,15 +289,19 @@ body
 
 #footer
 {
-    height:50px;  
-    font-family: Ubuntu, Helvetica, sans-serif;
-    color: #AAA;
-    padding: 25px 10px 5px 10px;
-    font-size: 0.9em;
-    text-align: center;
+    color: #CCC;
+    padding: 15px 10px 5px 10px;
     border-top: 2px solid #1C1C1C;
     border-bottom: 2px solid #1C1C1C;
     background-color: #256085;
+}
+
+#footer p
+{
+    text-align: center;
+    font-family: Ubuntu, Helvetica, sans-serif;
+    font-size: 0.9em;
+    margin-top: 10px;
 }
 
 

@@ -2,6 +2,9 @@
 
 date_default_timezone_set('Europe/Helsinki');
 
+ob_start('ob_gzhandler')
+    || ob_start();
+
 // Define path separator
 defined('PATH_SEPARATOR')
     || define('PATH_SEPARATOR', '/');

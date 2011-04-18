@@ -44,6 +44,7 @@ if ($this->doctype()->isHtml5()) echo $this->doctype();
     </div>
     <div id="header_right">
         <?php echo $this->loggedInAs(); ?>
+        <br />
         <?php echo $this->searchBox(); ?>
     </div>
     </div>
@@ -59,16 +60,20 @@ if ($this->doctype()->isHtml5()) echo $this->doctype();
     </div>
     <div class='clear'>&nbsp;</div> 
     <div id="footer">
-    <p>Pictures in database: <?php echo rand(9000, 9999); ?> | <?php echo rand(0, 999); ?> users online | picleaks@gmail.com</p>
-    <p>Sponsored by <a href="http://www.zombo.com"><strong>Zombo Chemicals</strong></a></p>
+        <p>Pictures in database: <?php echo rand(9000, 9999); ?> | <?php echo rand(0, 999); ?> users online | picleaks@gmail.com</p>
+        <p>Sponsored by <a href="http://www.zombo.com"><strong>Zombo Chemicals</strong></a></p>
     </div>
         <!-- jQuery test -->
         <div id="test" style="width='100%'; height='60px'; padding: 10px; display:none;">
             <h2>jQuery is loaded!</h2>
             <p>...you can now safely remove this element.</p>
         </div>
+    <div id="license" style="float:right">
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" />
+    </a>
 </div>
-
+</div>
   <!--[if lt IE 7 ]>
     <script>DD_belatedPNG.fix("img, .png_bg");</script>
   <![endif]-->
