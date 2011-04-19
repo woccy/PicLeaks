@@ -3,6 +3,7 @@
 .*
 *.log
 *.bak
+git.php
 site/data/session
 site/www/temp
 site/www/upload
