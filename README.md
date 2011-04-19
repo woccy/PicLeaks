@@ -1,4 +1,4 @@
-﻿# PICLEAKS - the free open source picture site #
+﻿# PICLEAKS - the free open source picture gallery
 
 ## Requirements
 
@@ -28,6 +28,7 @@ cd www
 ```bash
 git clone git@github.com:{your_user_name}/PicLeaks.git
 ```
+
 * enter the directory
 * create an upstream remote from public URL
 
